@@ -1,0 +1,49 @@
+{% if articles %}
+<section id="tips" class="section_tips">
+    <div class="section_title">
+        <h3>Latest Articles</h3>
+    </div>
+
+    <div class="tips_content">
+        <ul class="modal_items" data-from="blog" data-count="5">
+            {% for article in articles %}
+            <li>
+                <div class="item modal_item" data-index="1">
+                    <div class="item_left">
+                        <p>{{ article.published_at }}</p>
+                        <h5><a href="#">{{ article.title }}</a></h5>
+                        <a href="#" class="read_more">Read More</a>
+                        <div class="fn__hidden">
+                            <p class="fn__cat">{{ article.published_at }}</p>
+                            <h3 class="fn__title">{{ article.title }}</h3>
+                            <div class="img_holder">
+                                <img src="/static/img/thumb/square.jpg" alt="">
+                                <div class="abs_img" data-bg-img="{{ article.cover }}"></div>
+                            </div>
+                            <p class="fn__desc">
+                                {% autoescape off %}
+                                    {{ article.description }}
+                                {% endautoescape %}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="item_right">
+                        <div class="abs_img" data-bg-img="{{ article.cover }}" style="background-size: contain;"></div>
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="load_more">
+        <a href="#" data-done="Done" data-no="No more articles found">
+            <span class="text">Load More Articles</span>
+            <span class="fn__pulse">
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+        </a>
+    </div>
+</section>
+{% endif %}

@@ -1,0 +1,26 @@
+{% if service_tab and service_tab.services.all %}
+<section id="cv_services">
+    <div class="section_title">
+        <h3>Services</h3>
+    </div>
+    <p>{{ service_tab.description }}</p>
+    <div class="fn_cs_service_list">
+        <ul>
+            {% for service in service_tab.services.all %}
+            <li>
+                <div class="item">
+                    <div class="item_left">
+                        <h3>{{ service.title }}</h3>
+                        <p>{{ service.description }}</p>
+                    </div>
+                    <div class="item_right">
+                        <p>Starts from</p>
+                        <h3>{{ service.start_price }}</h3>
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+{% endif %}

@@ -1,0 +1,69 @@
+{% load static %}
+{% if profile %}
+<div class="cv__header">
+	<div class="in">
+		<div class="avatar">
+			<img src="{{ profile.photo }}" alt="">
+		</div>
+		<h3><span>{{ profile.first_name }}</span> {{ profile.last_name }}</h3>
+		<p class="quote">
+			 {{ profile.about_me }}<a href="#contact" class="anchor">Hire me</a></p>
+		<ul class="contact_info">
+			<li>
+				<span class="icon"><img src="{% static 'svg/location.svg' %}" alt="" class="fn__svg"></span>
+				<p>{{ profile.address }}</p>
+			</li>
+			<li>
+				<span class="icon"><img src="{%static 'svg/call.svg' %}" alt="" class="fn__svg"></span>
+				<p>{{ profile.phone_number }}</p>
+			</li>
+			<li>
+				<span class="icon"><img src="{% static 'svg/message.svg' %}" alt="" class="fn__svg"></span>
+				<p>{{ profile.email }}</p>
+			</li>
+		</ul>
+		<ul class="social">
+			{% if profile.twitter %}
+			<li>
+				<a href="{{ profile.twitter }}" target="_blank" title="twitter.com">
+					<img class="fn__svg" src="{% static 'svg/twitter.svg' %}" alt="twitter.com" />
+				</a>
+			</li>
+			{% endif %}
+
+			{% if profile.facebook %}
+			<li>
+				<a href="{{ profile.facebook }}" target="_blank" title="facebook.com">
+					<img class="fn__svg" src="{% static 'svg/facebook-logo.svg' %}" alt="facebook.com" />
+				</a>
+			</li>
+			{% endif %}
+
+			{% if profile.instagram %}
+			<li>
+				<a href="{{ profile.instagram }}" target="_blank" title="instagram.com">
+					<img class="fn__svg" src="{% static 'svg/instagram.svg' %}" alt="instagram.com" />
+				</a>
+			</li>
+			{% endif %}
+
+			{% if profile.pinterest %}
+			<li>
+				<a href="{{ profile.pinterest }}" target="_blank" title="printerest.com">
+					<img class="fn__svg" src="{% static 'svg/pinterest.svg' %}" alt="printerest.com" />
+				</a>
+			</li>
+			{% endif %}
+
+			{% if profile.youtbe %}
+			<li>
+				<a href="{{ profile.youtbe }}" target="_blank" title="youtube.com">
+					<img class="fn__svg" src="{% static 'svg/youtube.svg' %}" alt="youtube.com" />
+				</a>
+			</li>
+			{% endif %}
+
+		</ul>
+	</div>
+</div>
+{% endif %}

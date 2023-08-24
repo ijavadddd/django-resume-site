@@ -1,0 +1,40 @@
+{% if reference and reference.recommends.all %}
+<section id="cv_testimonials">
+    <div class="section_title">
+        <h3>References</h3>
+    </div>
+    <p>
+        {% autoescape off %}
+            {{ reference.description }}
+        {% endautoescape %}
+    </p>
+
+    <div class="fn_cs_testimonials">
+        <ul>
+            {% for recommend in reference.recommends.all %}
+            <li>
+                <div class="item">
+                    <div class="item_left">
+                        <p>{{ recommend.description }}</p>
+                    </div>
+                    <div class="item_right">
+                        <div class="t_ava">
+                            <div class="ava_in" data-bg-img="{{ recommend.photo }}"></div>
+                        </div>
+                        <div class="t_name">
+                            <p>{{ recommend.name }}</p>
+                        </div>
+                        <div class="t_rating" data-stars="{{ recommend.rate }}">
+                            <div class="rating_in">
+                                <div class="rating_active"><img src="static/svg/five-stars.svg" alt="" class="fn__svg"></div>
+                                <div class="rating_regular"><img src="static/svg/five-stars.svg" alt="" class="fn__svg"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+{% endif %}

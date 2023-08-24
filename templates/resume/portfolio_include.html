@@ -1,0 +1,40 @@
+{% if portfolios %}
+<section id="cv_portfolio">
+    <div class="section_title">
+        <h3>Portfolio</h3>
+    </div>
+
+    <!-- Portfolio Shortcode -->
+    <div class="fn_cs_portfolio">
+
+
+        <!-- Portfolio List -->
+        <div class="portfolio_list">
+            <ul class="gallery_zoom grid">
+
+                {% for portfolio in portfolios %}
+                <li class="popup grid-item">
+                    <div class="inner">
+                        <div class="entry">
+                            <a class="zoom" href="{{ portfolio.cover }}">
+                                <img src="{{ portfolio.cover }}" alt="" />
+                                <div class="main" data-bg-img="{{ portfolio.cover }}"></div>
+                                <div class="mobile_title">
+                                    <h3>{{ portfolio.title }}</h3>
+                                    <span>{{ portfolio.category.title }}</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+
+            </ul>
+        </div>
+        <!-- /Portfolio List -->
+
+    </div>
+    <!-- /Portfolio Shortcode -->
+
+</section>
+{% endif %}

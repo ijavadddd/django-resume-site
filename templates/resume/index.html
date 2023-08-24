@@ -1,0 +1,188 @@
+{% load static %}
+{% load render_partial %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="Resume">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<title>Resume</title>
+
+<!-- Google Fonts -->
+<!--<link rel="preconnect" href="https://fonts.googleapis.com" />-->
+<!--<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />-->
+<!--<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />-->
+<!-- /Google Fonts -->
+
+<!-- Styles -->
+<link type="text/css" rel="stylesheet" href="/static/css/base.css?ver=4" />
+<link type="text/css" rel="stylesheet" href="/static/css/magnific.css?ver=4" />
+<link type="text/css" rel="stylesheet" href="/static/css/animated-headlines.css?ver=4" />
+<link type="text/css" rel="stylesheet" href="/static/css/style.css?ver=4" />
+<!--[if lt IE 9]> <script type="text/javascript" src="/static/js/modernizr.custom.js"></script> <![endif]-->
+<!-- /Styles -->
+
+</head>
+
+<body>
+
+<div class="deebo_fn_main">
+			
+			
+<!--	&lt;!&ndash; Light/Dark Switcher &ndash;&gt;-->
+<!--	<div class="deebo_fn_switcher_wrap">-->
+<!--		<label>-->
+<!--			<span class="light">Light</span>-->
+<!--				<span class="checkbox_wrap">-->
+<!--					<input type="checkbox" id="skin_switcher" checked>-->
+<!--					<span class="slider round"></span>-->
+<!--				</span>-->
+<!--			<span class="dark">Dark</span>-->
+<!--		</label>-->
+<!--	</div>-->
+<!--	&lt;!&ndash; /Light/Dark Switcher &ndash;&gt;-->
+	
+	
+	<!-- Overlay -->
+	<div class="right_bar_overlay"></div>
+	<!--/ Overlay -->
+
+	<!-- MODALBOX -->
+	<div class="deebo_fn_modalbox">
+		<a class="extra_closer" href="#"></a>
+		<div class="box_inner">
+			<a class="closer" href="#"><span></span></a>
+			<div class="modal_content">
+
+				<div class="modal_in">
+					<!-- Content comes from JS -->
+				</div>
+
+				<div class="fn__nav" data-from="" data-index="">
+					<a href="#" class="prev">
+						<span class="text">Prev</span>
+						<span class="arrow_wrapper"><span class="arrow"></span></span>
+					</a>
+					<a href="#" class="next">
+						<span class="text">Next</span>
+						<span class="arrow_wrapper"><span class="arrow"></span></span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /MODALBOX --> 
+
+	<!-- Overlay -->
+	<div class="right_bar_overlay"></div>
+	<!--/ Overlay -->
+
+	<!-- MODALBOX -->
+	<div class="deebo_fn_modalbox">
+		<a class="extra_closer" href="#"></a>
+		<div class="box_inner">
+			<a class="closer" href="#"><span></span></a>
+			<div class="modal_content">
+
+				<div class="modal_in">
+					<!-- Content comes from JS -->
+				</div>
+
+				<div class="fn__nav" data-from="" data-index="">
+					<a href="#" class="prev">
+						<span class="text">Prev</span>
+						<span class="arrow_wrapper"><span class="arrow"></span></span>
+					</a>
+					<a href="#" class="next">
+						<span class="text">Next</span>
+						<span class="arrow_wrapper"><span class="arrow"></span></span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /MODALBOX --> 
+
+	<!-- Modal CV Card -->
+	<div class="deebo_fn_cv">
+
+		<!-- CV Inner -->
+		<div class="deebo_fn__cv">
+
+			<!-- CV Background -->
+			<div class="cv__bg"></div>
+			<div class="cv__bg2"></div>
+			<!-- /CV Background -->
+
+			<!-- CV Left Side -->
+				{% render_partial 'resume.views.ProfileView' %}
+			<!-- /CV Left Side -->
+
+			<!-- /CV Content Side -->
+			<div class="cv__content">
+				
+				{% render_partial 'resume.views.SentenceIntroductionView' %}
+
+				<!-- CV: Biography Section -->
+				{% render_partial 'resume.views.BiographyView' %}
+				<!-- /CV: Biography Section -->
+
+				<!-- CV: Education Section -->
+				{% render_partial 'resume.views.EducationView' %}
+				<!-- /CV: Education Section -->
+
+				<!-- CV: Experience Section -->
+				{% render_partial 'resume.views.ExperienceView' %}
+				<!-- /CV: Experience Section -->
+
+				<!-- CV: Skills Section -->
+				{% render_partial 'resume.views.SkillsView' %}
+				<!-- /CV: Skills Section -->
+
+				<!-- CV: Services Section -->
+				{% render_partial 'resume.views.ServicesView' %}
+				<!-- /CV: Services Section -->
+				
+				<!-- CV: Portfolio Section-->
+				{% render_partial 'resume.views.PortfolioView' %}
+				<!-- /CV: Portfolio Section-->
+
+				<!-- CV: Testimonials -->
+				{% render_partial 'resume.views.ReferencesView' %}
+				<!-- /CV: Testimonials -->
+
+				<!-- CV: Clients Section -->
+				{% render_partial 'resume.views.ClientsView' %}
+				<!-- /CV: Clients Section -->
+
+				<!-- CV: News Section -->
+				{% render_partial 'resume.views.ArticlesView' %}
+				<!-- CV: News Section -->
+				
+				{% render_partial 'chat.views.TicketView' %}
+
+			</div>
+			<!-- /CV Content Side -->
+
+		</div>
+		<!-- CV Inner -->
+	</div>
+	<!-- /Modal CV Card -->
+
+	
+
+</div>
+
+<!-- Scripts -->
+<script type="text/javascript" src="/static/js/jquery.js?ver=4"></script>
+<script type="text/javascript" src="/static/js/isotope.js"></script>
+<script type="text/javascript" src="/static/js/magnific.js"></script>
+<script type="text/javascript" src="/static/js/animated-headlines.js?ver=4"></script>
+<script type="text/javascript" src="/static/js/waypoints.js?ver=4"></script>
+<script type="text/javascript" src="/static/js/init.js?ver=4"></script>
+<!-- /Scripts -->
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+{% load static %}
+
+{% if experience %}
+<section id="cv_education">
+    <div class="section_title">
+        <h3>{{ type }}</h3>
+    </div>
+    <div class="fn_cs_boxed_list">
+        <ul>
+            {% for item in experience %}
+            <li>
+                <div class="item">
+                    <div class="item_top">
+                        <h5>{{ item.organization }}</h5>
+                        {% if item.until %}
+                        <span>( {{ item.since }} — {{ item.until }} )</span>
+                        {% else %}}
+                        <span>( {{ item.since }} — Present )</span>
+                        {% endif %}
+                    </div>
+                    <h3>{{ item.position }}</h3>
+                    {% autoescape off %}
+                    <p>{{ item.description }}</p>
+                    {% endautoescape %}
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+{% endif %}

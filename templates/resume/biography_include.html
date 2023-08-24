@@ -1,0 +1,26 @@
+{% load static %}
+{% if biography %}
+<section id="cv_biography">
+  <div class="section_title">
+      <h3>Biography</h3>
+  </div>
+  <p>
+      {% autoescape off %}
+      {{ biography.description }}
+      {% endautoescape  %}
+  </p>
+  <div class="fn_cs_info_items">
+      {% if biography.attributes.all %}
+          <ul>
+              {% for item in biography.attributes.all %}
+                {% if item.title %}
+                    <li><p>{{ item.title }}: <span>{{ item.value }}</span></p></li>
+                {% else %}
+                    <li><p>{{ item.value }}</p></li>
+                {% endif %}
+              {% endfor %}
+          </ul>
+      {% endif %}
+  </div>
+</section>
+{% endif %}
